@@ -88,6 +88,10 @@ allocproc(void)
 found:
   p->state = EMBRYO;
   p->pid = nextpid++;
+  
+  p->countID = 0; // first countID has to be 0
+  p->resetID = 0; // ResetID also 0
+  p->callID = 5; // first were counting syscall numb 5.
 
   release(&ptable.lock);
 

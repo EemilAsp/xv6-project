@@ -89,3 +89,29 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+//Functions below added by me
+
+int sys_getnumb(void)
+{
+return myproc()->countID; //returining the countnumber
+}
+
+int
+sys_resetCount(void) // reseting the count
+{
+myproc()->countID = 0; // count is 0
+return 0;
+}
+
+int
+sys_setCounter(int x) //modify the syscall counted
+{
+myproc()->callID = x; //new callID equals to user given number
+return 0;
+}
+
+
+
+
+
